@@ -5,7 +5,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -23,8 +22,16 @@
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
 
+
         app:menu="@menu/navigation"
 
         />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelinehor3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_lock"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="16dp"
+        android:alpha=".5"
+        app:layout_constraintBottom_toTopOf="@+id/cv1"
+        app:layout_constraintEnd_toEndOf="@+id/cv1"
+        app:layout_constraintStart_toStartOf="@+id/cv1"
+        app:srcCompat="@drawable/lock_whith_angle_lock_500" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="8dp"
+        android:background="@drawable/cardborder"
+
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinehor2"
+        app:layout_constraintDimensionRatio="604:875"
+        app:layout_constraintEnd_toStartOf="@+id/cv2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelinehor1">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout1"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:visibility="visible"
+                app:srcCompat="@drawable/a001_2"
+                tools:layout_editor_absoluteX="6dp"
+                tools:layout_editor_absoluteY="8dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/cardborder"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv1"
+        app:layout_constraintDimensionRatio="604:875"
+        app:layout_constraintEnd_toStartOf="@+id/cv3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cv1"
+        app:layout_constraintTop_toTopOf="@+id/cv1">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:srcCompat="@drawable/a100"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="8dp" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/cardborder"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv2"
+        app:layout_constraintDimensionRatio="604:875"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cv2"
+        app:layout_constraintTop_toTopOf="@+id/cv2">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:srcCompat="@drawable/a100"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="8dp" />
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/button_generate_comix"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:onClick="buttonClick"
+        android:text="Genearate new comix"
+        android:theme="@style/MyButton"
+        app:layout_constraintBottom_toTopOf="@+id/guidelinehor3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelinehor3"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelinehor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelinehor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.79" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelinehor3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+
+</android.support.constraint.ConstraintLayout>
