@@ -1,17 +1,21 @@
 package com.example.michailgromtsev.cyanideandhappinesscomixgenerator;
 
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
+
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+
 
 import com.jawnnypoo.physicslayout.PhysicsFrameLayout;
 
@@ -26,6 +30,8 @@ public class Fragmenttwo extends Fragment implements RotationGestureDetector.OnR
     private  float oldEngle;
     private RotationGestureDetector rotationDetector;
 
+    private FloatingActionButton floatingActionButton;
+
 
     public Fragmenttwo() {}
     @Nullable
@@ -35,51 +41,24 @@ public class Fragmenttwo extends Fragment implements RotationGestureDetector.OnR
 
         physicsLayout = view.findViewById(R.id.physics_layout);
         cardView1 = view.findViewById(R.id.cv1);
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
 
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) cardView1.getLayoutParams();
         params.setMarginStart(200);
-       // cardView1.setLayoutParams(params);
 
         physicsLayout.getPhysics().enableFling();
-       physicsLayout.getPhysics().enablePhysics();
-        //physicsLayout.getPhysics().disablePhysics();
-
-     //  physicsLayout.getPhysics().disableFling();
-
+       //physicsLayout.getPhysics().enablePhysics();
         rotationDetector = new RotationGestureDetector(this);
-//        cardView1.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//               int i = 10;
-//                return true;
-//            }
-//        });
-//        cardView1.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent motionEvent) {
-//                selectedForRotationCardView1 = cardView1;
-//                oldEngle = selectedForRotationCardView1.getRotation();
-//                rotationDetector.onTouchEvent(motionEvent);
-//                return false;
-//            }
-//
-////            view.set
-//        });
 
-//        PhysicsConfig config = PhysicsConfig.create();
-//        config.shapeType = PhysicsConfig.SHAPE_TYPE_CIRCLE;
-//        config.radius = dpToPx(30);
-//        config.fixtureDef = fixtureDef;
-//        config.bodyDef = bodyDef;
-//        Physics.setPhysicsConfig(circleView, config);
-        view.setOnTouchListener(new View.OnTouchListener() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent motionEvent) {
+            public void onClick(View v) {
+                physicsLayout.getPhysics().giveRandomImpulse();
 
-                return true;
+                Drawable imageLockDrawable = floatingActionButton.getDrawable();
+                ((Animatable) imageLockDrawable).start();
             }
         });
-
         return view;
     }
 

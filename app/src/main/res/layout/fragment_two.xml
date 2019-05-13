@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--app:layout_bodyType="statik"-->
+
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,33 +7,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:elevation="100dp"
+        app:backgroundTint="@color/colorPrimary"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/lock_whith_angle_lock_300" />
+
     <com.jawnnypoo.physicslayout.PhysicsFrameLayout
         android:id="@+id/physics_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:physics="true"
+
+        app:bounds="true"
+        app:boundsSize="20dp"
         app:gravityX="0"
         app:gravityY="9.8"
-        app:bounds="true"
-        app:boundsSize="20dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+
+
+        app:physics="true"
+        app:positionIterations="7"
+        app:velocityIterations="4">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv1"
             android:layout_width="131dp"
             android:layout_height="192dp"
 
+            android:layout_gravity="top"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
+
+
             android:background="@drawable/cardborder"
-
-
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
+
             app:layout_constraintDimensionRatio="604:875"
 
-            app:layout_fixedRotation="true"
-
-            android:layout_gravity="top">
+            app:layout_fixedRotation="true">
 
             <RelativeLayout
                 android:id="@+id/relative_layout1"
@@ -59,7 +80,7 @@
             android:background="@drawable/cardborder"
 
             app:cardCornerRadius="5dp"
-            app:cardElevation="10dp"
+            app:cardElevation="15dp"
             app:layout_constraintDimensionRatio="604:875"
             app:layout_fixedRotation="true"
 
@@ -78,21 +99,21 @@
                     app:srcCompat="@drawable/ic_card_2" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
+
         <android.support.v7.widget.CardView
             android:id="@+id/cv3"
             android:layout_width="131dp"
             android:layout_height="192dp"
-            android:background="@drawable/cardborder"
-            app:cardCornerRadius="5dp"
-            app:layout_constraintDimensionRatio="604:875"
-            app:layout_fixedRotation="true"
-
-            app:cardElevation="15dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="100dp"
-
             android:layout_gravity="top"
-            >
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/cardborder"
+
+            app:cardCornerRadius="5dp"
+            app:cardElevation="25dp"
+            app:layout_constraintDimensionRatio="604:875"
+
+            app:layout_fixedRotation="true">
 
             <RelativeLayout
                 android:id="@+id/relative_layout3"
@@ -104,23 +125,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/ic_card_3"
-                    />
+                    app:srcCompat="@drawable/ic_card_3" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
+
         <android.support.v7.widget.CardView
             android:id="@+id/cv4"
             android:layout_width="131dp"
             android:layout_height="192dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="120dp"
             android:background="@drawable/cardborder"
+
             app:cardCornerRadius="5dp"
+            app:cardElevation="35dp"
             app:layout_constraintDimensionRatio="604:875"
             app:layout_fixedRotation="true"
-
-            app:cardElevation="20dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginStart="0dp"
-            android:layout_gravity="center"
 
             >
 
@@ -142,16 +163,15 @@
             android:id="@+id/cv5"
             android:layout_width="131dp"
             android:layout_height="192dp"
-            android:background="@drawable/cardborder"
-            app:cardCornerRadius="5dp"
-            app:layout_constraintDimensionRatio="604:875"
-            app:layout_fixedRotation="true"
-
-            app:cardElevation="25dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginStart="0dp"
             android:layout_gravity="center"
-            >
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/cardborder"
+
+            app:cardCornerRadius="5dp"
+            app:cardElevation="45dp"
+            app:layout_constraintDimensionRatio="604:875"
+            app:layout_fixedRotation="true">
 
             <RelativeLayout
                 android:id="@+id/relative_layout5"
@@ -163,8 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/ic_card_5"
-                    />
+                    app:srcCompat="@drawable/ic_card_5" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
@@ -172,17 +191,16 @@
             android:id="@+id/cv6"
             android:layout_width="131dp"
             android:layout_height="192dp"
-            android:background="@drawable/cardborder"
-            app:cardCornerRadius="5dp"
-            app:layout_constraintDimensionRatio="604:875"
-            app:layout_fixedRotation="true"
-
-            app:cardElevation="25dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginStart="60dp"
-
             android:layout_gravity="center"
-            >
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/cardborder"
+
+            app:cardCornerRadius="5dp"
+            app:cardElevation="65dp"
+            app:layout_constraintDimensionRatio="604:875"
+
+            app:layout_fixedRotation="true">
 
             <RelativeLayout
                 android:id="@+id/relative_layout6"
@@ -194,18 +212,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/ic_card_6"
-                    />
+                    app:srcCompat="@drawable/ic_card_6" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
+
 
         <View
             android:layout_width="300dp"
             android:layout_height="2dp"
             android:layout_gravity="center"
             android:layout_marginTop="0dp"
-            android:background="#a40404"
-            app:layout_bodyType="kinematic" />
+            android:background="@color/colorPrimary"
+            app:layout_bodyType="statik" />
 
     </com.jawnnypoo.physicslayout.PhysicsFrameLayout>
 

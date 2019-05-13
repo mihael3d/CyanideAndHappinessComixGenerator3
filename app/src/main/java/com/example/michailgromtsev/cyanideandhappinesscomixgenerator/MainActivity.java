@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.FragmentThree;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.view.ComicGeneratorFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                             replaceFragment(Fragmenttwo.newInstance(), TAG_FRAGMENT_TWO);
                         return true;
                     case R.id.navigation_notifications:
-
+                        replaceFragment(FragmentThree.newInstance(), TAG_FRAGMENT_THREE);
                         return true;
                 }
             }
