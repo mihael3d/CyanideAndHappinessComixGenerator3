@@ -1,13 +1,12 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.adapter.ItemViewHolder;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter.ItemViewHolder;
 
-import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {

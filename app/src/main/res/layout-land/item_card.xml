@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:id="@+id/relative_layout1"
+            android:id="@+id/card_1_border_layout"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             android:background="@drawable/cardborder">
 
             <ImageView
-                android:id="@+id/imageView1"
+                android:id="@+id/card3_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

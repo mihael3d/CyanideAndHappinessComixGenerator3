@@ -1,4 +1,4 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.adapter;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -6,10 +6,9 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper.ItemTouchHelperViewHolder;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.ItemTouchHelperViewHolder;
 
 public class ItemViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder {
 
@@ -20,7 +19,7 @@ private ImageView imageView;
     public ItemViewHolder(View itemView) {
         super(itemView);
         cardView = itemView.findViewById(R.id.cv1);
-        imageView = itemView.findViewById(R.id.imageView1);
+        imageView = itemView.findViewById(R.id.card3_image_view);
         cardColor = cardView.getCardBackgroundColor();
     }
 

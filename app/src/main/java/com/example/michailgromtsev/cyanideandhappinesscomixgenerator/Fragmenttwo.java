@@ -20,7 +20,7 @@ import android.widget.FrameLayout;
 import com.jawnnypoo.physicslayout.PhysicsFrameLayout;
 
 
-public class Fragmenttwo extends Fragment implements RotationGestureDetector.OnRotationGestureListener {
+public class Fragmenttwo extends Fragment {
 
     private PhysicsFrameLayout physicsLayout;
     private final int layout = R.layout.fragment_two;
@@ -28,7 +28,7 @@ public class Fragmenttwo extends Fragment implements RotationGestureDetector.OnR
     private CardView selectedForRotationCardView1;
 
     private  float oldEngle;
-    private RotationGestureDetector rotationDetector;
+
 
     private FloatingActionButton floatingActionButton;
 
@@ -48,7 +48,7 @@ public class Fragmenttwo extends Fragment implements RotationGestureDetector.OnR
 
         physicsLayout.getPhysics().enableFling();
        //physicsLayout.getPhysics().enablePhysics();
-        rotationDetector = new RotationGestureDetector(this);
+
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +72,7 @@ public class Fragmenttwo extends Fragment implements RotationGestureDetector.OnR
     }
 
 
-    @Override
-    public void OnRotation(RotationGestureDetector rotationDetector) {
-        float angle = rotationDetector.getAngle();
-        selectedForRotationCardView1.setRotation(oldEngle - angle);
-    }
+
 
 
 

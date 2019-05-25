@@ -1,10 +1,9 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -13,11 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.adapter.RecyclerListAdapter;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper.OnStartDragListener;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper.SimpleItemTouchHelperCallback;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter.RecyclerListAdapter;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.OnStartDragListener;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.SimpleItemTouchHelperCallback;
 
-import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
 

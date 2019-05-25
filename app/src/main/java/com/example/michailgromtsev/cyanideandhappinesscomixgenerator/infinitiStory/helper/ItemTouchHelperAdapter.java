@@ -1,4 +1,4 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper;
 
 public interface ItemTouchHelperAdapter {
     boolean  onItemMove(int fromPosition, int toPosition);

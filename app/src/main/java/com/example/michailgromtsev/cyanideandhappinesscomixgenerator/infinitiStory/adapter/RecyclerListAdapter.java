@@ -1,4 +1,4 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.adapter;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper.ItemTouchHelperAdapter;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper.OnStartDragListener;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.ItemTouchHelperAdapter;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.OnStartDragListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.infinitiStory.helper;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper;
 import android.support.v7.widget.helper.ItemTouchHelper;
 public interface ItemTouchHelperViewHolder {
     /**
