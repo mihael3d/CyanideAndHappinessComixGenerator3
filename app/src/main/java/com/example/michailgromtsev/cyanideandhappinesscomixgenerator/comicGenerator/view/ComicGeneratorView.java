@@ -1,4 +1,4 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.view;
 
 
 import com.arellomobile.mvp.MvpView;

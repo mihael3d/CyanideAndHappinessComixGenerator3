@@ -20,7 +20,7 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/lock_whith_angle_lock_300" />
+        app:srcCompat="@drawable/round_arrows_bouce_white" />
 
     <com.jawnnypoo.physicslayout.PhysicsFrameLayout
         android:id="@+id/physics_layout"
@@ -35,8 +35,7 @@
 
 
         app:physics="true"
-        app:positionIterations="7"
-        app:velocityIterations="4">
+        >
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv1"
@@ -62,7 +61,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/card3_image_view"
+                    android:id="@+id/card1_image_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
@@ -92,7 +91,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/card3_image_view"
+                    android:id="@+id/card2_image_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
@@ -151,7 +150,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/card4_image_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
@@ -179,7 +178,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/card5_image_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
@@ -208,7 +207,37 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/card6_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_card_6" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv7"
+            android:layout_width="131dp"
+            android:layout_height="192dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/cardborder"
+
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:layout_constraintDimensionRatio="604:875"
+
+            app:layout_fixedRotation="true">
+
+            <RelativeLayout
+                android:id="@+id/relative_layout7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/card7_image_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
@@ -223,40 +252,42 @@
             android:layout_gravity="center"
             android:layout_marginTop="0dp"
             android:background="@color/colorPrimary"
-            app:layout_bodyType="statik" />
+            app:layout_bodyType="statik"
+            android:clickable="false"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1000dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="-1000dp"
+            android:layout_marginBottom="-1050dp"
             android:background="@color/colorPrimary"
-            app:layout_bodyType="statik" />
+            app:layout_bodyType="kinematic"
+            android:clickable="false"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1000dp"
             android:layout_gravity="top"
-            android:layout_marginTop="-1000dp"
+            android:layout_marginTop="-1050dp"
             android:background="@color/colorPrimary"
-            app:layout_bodyType="statik" />
+            app:layout_bodyType="kinematic"
+            android:clickable="false"/>
 
         <View
             android:layout_width="1000dp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:layout_marginStart="-1000dp"
+            android:layout_marginStart="-1001dp"
             android:background="@color/colorPrimary"
-            app:layout_bodyType="statik" />
+            app:layout_bodyType="kinematic"
+            android:clickable="false"/>
         <View
             android:layout_width="1000dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:layout_marginEnd="-1000dp"
+            android:layout_marginEnd="-1001dp"
             android:background="@color/colorPrimary"
-            app:layout_bodyType="statik" />
-
-
-
+            app:layout_bodyType="kinematic"
+            android:clickable="false"/>
 
     </com.jawnnypoo.physicslayout.PhysicsFrameLayout>
 

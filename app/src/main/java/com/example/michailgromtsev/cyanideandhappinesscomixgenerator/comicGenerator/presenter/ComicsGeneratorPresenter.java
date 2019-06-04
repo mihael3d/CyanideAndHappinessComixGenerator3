@@ -1,9 +1,9 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.presenter;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 import com.daimajia.androidanimations.library.Techniques;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.view.ComicGeneratorView;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.model.ComixGeneratorModel;
 
 
@@ -17,6 +17,10 @@ public class ComicsGeneratorPresenter extends MvpPresenter<ComicGeneratorView> {
     protected void onFirstViewAttach() {
             super.onFirstViewAttach();
         comixGeneratorModel = new ComixGeneratorModel();
+        getViewState().setCard1Image(comixGeneratorModel.getCard1Image());
+        getViewState().setCard2Image(comixGeneratorModel.getCard2Image());
+        getViewState().setCard3Image(comixGeneratorModel.getCard3Image());
+
         }
         @Override
         public void attachView(ComicGeneratorView view) {
@@ -79,17 +83,19 @@ public class ComicsGeneratorPresenter extends MvpPresenter<ComicGeneratorView> {
 
         Techniques  techniques =  comixGeneratorModel.getTechniques();
 
+//        comixGeneratorModel.getFields();
+
         if(!comixGeneratorModel.isCard1Locked()) {
             getViewState().setCard1Appearance( techniques,comixGeneratorModel.getDelayForCard1Show());
-            getViewState().setCard1Image(R.drawable.a001_2);
+            getViewState().setCard1Image(comixGeneratorModel.getCard1Image());
         }
        if (!comixGeneratorModel.isCard2Locked()){
            getViewState().setCard2Appearance( techniques,comixGeneratorModel.getDelayForCard2Show());
-           getViewState().setCard2Image(R.drawable.a001_2);
+           getViewState().setCard2Image(comixGeneratorModel.getCard2Image());
        }
        if (!comixGeneratorModel.isCard3Locked()){
            getViewState().setCard3Appearance( techniques,comixGeneratorModel.getDelayForCard3Show());
-           getViewState().setCard3Image(R.drawable.a001_2);
+           getViewState().setCard3Image(comixGeneratorModel.getCard3Image());
        }
     }
 }

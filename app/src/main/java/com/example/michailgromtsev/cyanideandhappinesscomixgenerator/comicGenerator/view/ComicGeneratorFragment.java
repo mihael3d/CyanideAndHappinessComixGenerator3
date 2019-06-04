@@ -1,6 +1,5 @@
 package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.view;
 
-import android.animation.Animator;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -21,8 +19,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.ComicsGeneratorPresenter;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.ComicGeneratorView;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.presenter.ComicsGeneratorPresenter;
 
 public class ComicGeneratorFragment extends MvpAppCompatFragment implements ComicGeneratorView {
 
@@ -44,7 +41,7 @@ public class ComicGeneratorFragment extends MvpAppCompatFragment implements Comi
 
     private  Handler handler;
 
-    public ComicGeneratorFragment() {}
+    //public ComicGeneratorFragment() {}
 
     @InjectPresenter(tag="comicsGenerator")
     ComicsGeneratorPresenter comicsGeneratorPresenter;
