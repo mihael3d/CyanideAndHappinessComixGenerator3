@@ -1,92 +1,122 @@
 package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.ItemTouchHelperAdapter;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.OnStartDragListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
-public class RecyclerListAdapter extends RecyclerView.Adapter<ItemViewHolder>  implements ItemTouchHelperAdapter {
+public class RecyclerListAdapter extends RecyclerView.Adapter<CardViewHolder>  implements ItemTouchHelperAdapter {
 
-    private int itemLayout = R.layout.item_card;
-    private int orientation;
+   private int orientation;
 
-    private static final String[] STRINGS = new String[]{
-            "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"
-    };
-
-    private final List<String> mItems = new ArrayList<>();
+    private final List<Integer> cardItems = new ArrayList<>();
     private  final OnStartDragListener dragListener;
+
+    @Nullable
+    private OnMoveUpOrLeftListner itemMoveUpOrLeftListner;
+    @Nullable
+    private OnItemMoveDownOrRightListner itemMoveDownOrRightListner;
+    @Nullable
+    private OnItemDismissListner onItemDismisstListner;
 
 
     public RecyclerListAdapter(OnStartDragListener dragListener, int orientation) {
         this.dragListener = dragListener;
         this.orientation = orientation;
-        mItems.addAll(Arrays.asList(STRINGS));
+       // cardItems.addAll(Arrays.asList(INTEGERS));
     }
 
 
     @NonNull
     @Override
-    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(itemLayout, parent, false);
-        return new ItemViewHolder(view);
+    public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return CardViewHolder.create(parent);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull final ItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final CardViewHolder holder, int position) {
+        Integer card = cardItems.get(position);
+        holder.bind(card);
             if (orientation == ORIENTATION_PORTRAIT){
-                holder.getImageView().setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        if ( event.getActionMasked() == MotionEvent.ACTION_DOWN){
-                            dragListener.onStartDrag(holder);
-                        }
-                        return false;
+                holder.getImageView().setOnTouchListener((v, event) -> {
+                    if ( event.getActionMasked() == MotionEvent.ACTION_DOWN){
+                        dragListener.onStartDrag(holder);
                     }
+                    return false;
                 });
             }
     }
 
-
     @Override
     public int getItemCount() {
-        return mItems.size();
+        return cardItems.size();
     }
 
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
         if (fromPosition < toPosition) {
             for (int i = fromPosition; i < toPosition; i++) {
-                Collections.swap(mItems, i, i+1);
+                Collections.swap(cardItems, i, i+1);
+                itemMoveUpOrLeftListner.onItemUpOrLeftMove(i);
             }
         } else {
             for (int i = fromPosition; i > toPosition; i --) {
-                Collections.swap(mItems, i, i-1);
+                Collections.swap(cardItems, i, i-1);
+
+                itemMoveDownOrRightListner.onItemDownOrRightMove(i);
+                //add callback2
             }
         }
         notifyItemMoved(fromPosition,toPosition);
         return true;
     }
 
+
+    public void setOnMoveUpOrLeftListner (@NonNull OnMoveUpOrLeftListner itemMoveUpOrLeftListner) {
+        this.itemMoveUpOrLeftListner = itemMoveUpOrLeftListner;
+    }
+
+    public interface OnMoveUpOrLeftListner {
+        void onItemUpOrLeftMove (@NonNull int i );
+    }
+
+    public void setOnItemMoveDownOrRightListner (@NonNull OnItemMoveDownOrRightListner itemMoveDownOrRightListner) {
+        this.itemMoveDownOrRightListner = itemMoveDownOrRightListner;
+    }
+
+    public interface OnItemMoveDownOrRightListner {
+        void onItemDownOrRightMove (@NonNull int i );
+    }
+
     @Override
     public void onItemDismiss(int position) {
-        mItems.remove(position);
+        cardItems.remove(position);
+        onItemDismisstListner.onItemDismiss(position);
         notifyItemRemoved(position);
     }
 
+    public void setOnItemDismisstListner (@NonNull OnItemDismissListner onItemDismisstListner) {
+        this.onItemDismisstListner = onItemDismisstListner;
+    }
 
+    public interface OnItemDismissListner {
+        void onItemDismiss (@NonNull int position);
+    }
+
+    public void replaceItems(List<Integer> cardsItems) {
+        this.cardItems.clear();
+        this.cardItems.addAll(cardsItems);
+        notifyDataSetChanged();
+    }
 }

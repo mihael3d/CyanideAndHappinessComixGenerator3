@@ -21,6 +21,8 @@ import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.presenter.ComicsGeneratorPresenter;
 
+import info.hoang8f.widget.FButton;
+
 public class ComicGeneratorFragment extends MvpAppCompatFragment implements ComicGeneratorView {
 
     private final int layout = R.layout.fragment_comix_genertor; // fragment_home   exemple_layout  fragment_comix_genertor
@@ -31,6 +33,7 @@ public class ComicGeneratorFragment extends MvpAppCompatFragment implements Comi
     private ImageView imageViewCard2;
     private ImageView imageViewCard3;
     private Button buttonGenerateComix;
+
     private RelativeLayout card1BorderLayout;
     private RelativeLayout card2BorderLayout;
     private RelativeLayout card3BorderLayout;
@@ -63,6 +66,7 @@ private void setupUi (View view){
     imageViewCard2 = view.findViewById(R.id.image_view_card_2);
     imageViewCard3 = view.findViewById(R.id.image_view_card_3);
     buttonGenerateComix = view.findViewById(R.id.button_generate_comix);
+
     cardView1 = view.findViewById(R.id.cv1 );
     cardView2 = view.findViewById(R.id.cv2 );
     cardView3 = view.findViewById(R.id.cv3 );
@@ -73,6 +77,9 @@ private void setupUi (View view){
     imageLock1 = view.findViewById(R.id.image_lock);
     imageLock2 = view.findViewById(R.id.image_lock_2);
     imageLock3 = view.findViewById(R.id.image_lock_3);
+
+
+
 }
 
 private void setupUx(){

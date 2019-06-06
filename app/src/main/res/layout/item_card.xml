@@ -33,10 +33,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/cardborder">
+          >
 
             <ImageView
-                android:id="@+id/card3_image_view"
+                android:id="@+id/item_card_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -63,3 +63,5 @@
 
 
 </android.support.constraint.ConstraintLayout>
+
+    <!--android:background="@drawable/cardborder"-->

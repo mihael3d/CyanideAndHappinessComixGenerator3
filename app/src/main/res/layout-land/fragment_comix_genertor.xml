@@ -154,9 +154,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
 
-        android:onClick="buttonClick"
+
         android:text="Genearate new comix"
         android:theme="@style/MyButton"
+        android:background="@drawable/btn_rounded"
         app:layout_constraintBottom_toTopOf="@+id/guidelinehor3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

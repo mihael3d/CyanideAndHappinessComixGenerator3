@@ -2,25 +2,38 @@ package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiSt
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.ItemTouchHelperViewHolder;
 
-public class ItemViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder {
+public class CardViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder {
 
-private CardView cardView;
-private ColorStateList cardColor;
-private ImageView imageView;
+    private static final int LAYOUT = R.layout.item_card;
 
-    public ItemViewHolder(View itemView) {
+    private CardView cardView;
+    private ColorStateList cardColor;
+    private ImageView imageView;
+
+
+    public static CardViewHolder create( @NonNull ViewGroup parent){
+        final View view =  LayoutInflater.from(parent.getContext()).inflate(LAYOUT,parent,false);
+        return new CardViewHolder(view);
+    }
+
+     CardViewHolder(View itemView) {
         super(itemView);
-        cardView = itemView.findViewById(R.id.cv1);
-        imageView = itemView.findViewById(R.id.card3_image_view);
-        cardColor = cardView.getCardBackgroundColor();
+        findeViews(itemView);
+    }
+
+    void bind (@NonNull Integer cardResuse) {
+        imageView.setImageResource(cardResuse);
     }
 
     /**
@@ -29,8 +42,7 @@ private ImageView imageView;
      */
     @Override
     public void onItemSelected() {
-        cardView.setCardBackgroundColor(Color.LTGRAY);
-
+       cardView.setCardBackgroundColor(Color.LTGRAY);
     }
 
     /**
@@ -40,7 +52,6 @@ private ImageView imageView;
     @Override
     public void onItemClear() {
         cardView.setCardBackgroundColor(cardColor);
-
     }
 
     public ImageView getImageView() {
@@ -49,5 +60,11 @@ private ImageView imageView;
 
     public CardView getCardView() {
         return cardView;
+    }
+
+    private void findeViews (@NonNull View itemView) {
+        cardView = itemView.findViewById(R.id.cv1);
+        imageView = itemView.findViewById(R.id.item_card_image_view);
+        cardColor = cardView.getCardBackgroundColor();
     }
 }

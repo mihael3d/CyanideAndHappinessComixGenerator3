@@ -130,7 +130,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
     card1ImageView = view.findViewById(R.id.card1_image_view);
     card2ImageView = view.findViewById(R.id.card2_image_view);
-    card3ImageView = view.findViewById(R.id.card3_image_view);
+    card3ImageView = view.findViewById(R.id.item_card_image_view);
     card4ImageView = view.findViewById(R.id.card4_image_view);
     card5ImageView = view.findViewById(R.id.card5_image_view);
     card6ImageView = view.findViewById(R.id.card6_image_view);

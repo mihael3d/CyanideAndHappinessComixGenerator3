@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter.ItemViewHolder;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter.CardViewHolder;
 
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
@@ -88,7 +88,7 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
                             float dX, float dY, int actionState, boolean isCurrentlyActive) {
         if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
             // Fade out the view as it is swiped out of the parent's bounds
-            ((ItemViewHolder)viewHolder).getCardView().setCardBackgroundColor(Color.WHITE);
+            ((CardViewHolder)viewHolder).getCardView().setCardBackgroundColor(Color.WHITE);
             if (orientation == ORIENTATION_PORTRAIT){
             final float alpha = ALPHA_FULL - Math.abs(dX) / (float) viewHolder.itemView.getWidth();
             viewHolder.itemView.setAlpha(alpha);

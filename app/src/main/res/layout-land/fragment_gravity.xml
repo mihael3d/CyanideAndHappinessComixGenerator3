@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="24dp"
         android:clickable="true"
         android:elevation="100dp"
         app:backgroundTint="@color/colorPrimary"
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/card3_image_view"
+                    android:id="@+id/item_card_image_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="visible"
@@ -249,7 +249,7 @@
             android:layout_width="wrap_content"
             android:layout_height="2dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="45dp"
+            android:layout_marginBottom="49dp"
             android:background="@color/colorPrimary"
             app:layout_bodyType="statik"
             android:clickable="false"/>
