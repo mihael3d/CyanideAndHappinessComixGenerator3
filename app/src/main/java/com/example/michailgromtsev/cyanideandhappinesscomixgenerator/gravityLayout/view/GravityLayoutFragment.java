@@ -110,7 +110,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
             ((Animatable) imageLockDrawable).stop();
             ((Animatable) imageLockDrawable).start();
         });
-
+// lets start refactoring gravityLayout!
         return view;
     }
 
