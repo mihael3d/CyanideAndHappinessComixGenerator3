@@ -19,7 +19,7 @@ public class GravityLayoutModel {
         cardsOnTheTable =  new ArrayList();
         alreadyShownСards =  new ArrayList();
         cards = Cards.getInstance();
-        allCards = cards.getCardsList();
+        allCards = cards.getCardsSimpleList();
     }
     public int getCard1Image(){
         return getRandomImage(0);

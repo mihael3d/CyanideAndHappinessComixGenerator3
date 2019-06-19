@@ -1,13 +1,8 @@
 package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.model;
 
-import android.content.Context;
-
 import com.daimajia.androidanimations.library.Techniques;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.GlobalApplication;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.data.Cards;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,14 +25,16 @@ public class ComixGeneratorModel {
     private ArrayList<Integer> alreadyShownСards;
 
     private Cards cards;
-    private ArrayList<Integer> allCards;
+    private ArrayList<Integer> simpleCards;
+    private ArrayList<Integer> finaleCards;
 
 
     public ComixGeneratorModel(){
         cardsOnTheTable =  new ArrayList();
         alreadyShownСards =  new ArrayList();
         cards = Cards.getInstance();
-        allCards = cards.getCardsList();
+        simpleCards = cards.getCardsSimpleList();
+        finaleCards = cards.getCardsFinaleList();
     }
 
     //Animation for card appearance
@@ -49,22 +46,23 @@ public class ComixGeneratorModel {
 
 
     public int getCard1Image(){
-        return getRandomImage(0);
+        return getRandomSimpleCardImage(0);
     }
 
     public int getCard2Image(){
-        return getRandomImage(1);
+        return getRandomSimpleCardImage(1);
     }
 
     public int getCard3Image(){
-        return getRandomImage(2);
+        return getRandomSimpleCardImage(2);
+        //return getRandomFinaleCardImage();
     }
 
-    private int getRandomImage(int cardIndex){
+    private int getRandomSimpleCardImage(int cardIndex){
         Random rand = new Random();
-        int randomElement = allCards.get(rand.nextInt(allCards.size()));
+        int randomElement = simpleCards.get(rand.nextInt(simpleCards.size()));
                 while (cardsOnTheTable.contains(randomElement)){
-                    randomElement = allCards.get(rand.nextInt(allCards.size()));
+                    randomElement = simpleCards.get(rand.nextInt(simpleCards.size()));
                 }
         if (cardsOnTheTable.size()<3){
             cardsOnTheTable.add(cardIndex,randomElement);
@@ -75,7 +73,11 @@ public class ComixGeneratorModel {
         return randomElement;
     }
 
-
+    private int getRandomFinaleCardImage(){
+        Random rand = new Random();
+        int randomElement = finaleCards.get(rand.nextInt(finaleCards.size()));
+        return randomElement;
+    }
     public long getDelayForCard1Show(){
         return 0;
     }

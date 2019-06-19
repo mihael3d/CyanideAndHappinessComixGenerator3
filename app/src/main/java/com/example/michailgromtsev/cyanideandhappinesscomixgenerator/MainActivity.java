@@ -10,14 +10,14 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.gravityLayout.view.GravityLayoutFragment;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.FragmentThree;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.view.InfinitiStoryFragment;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.view.ComicGeneratorFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG_FRAGMENT_ONE = "fragment_one";
     private static final String TAG_FRAGMENT_TWO = "fragment_gravity";
-    private static final String TAG_FRAGMENT_THREE = "fragment_three";
+    private static final String TAG_FRAGMENT_THREE = "fragment_infiniti_story";
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                             hideFragment(TAG_FRAGMENT_ONE);
                             hideFragment(TAG_FRAGMENT_TWO);
                         if(getSupportFragmentManager().findFragmentByTag(TAG_FRAGMENT_THREE)==null){
-                            addFragment(FragmentThree.newInstance(),TAG_FRAGMENT_THREE);
+                            addFragment(InfinitiStoryFragment.newInstance(),TAG_FRAGMENT_THREE);
                         }
                         showFragment(TAG_FRAGMENT_THREE);
                         return true;

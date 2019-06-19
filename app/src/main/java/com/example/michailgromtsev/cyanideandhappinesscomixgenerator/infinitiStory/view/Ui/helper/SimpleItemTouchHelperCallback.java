@@ -1,11 +1,11 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.view.Ui.helper;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter.CardViewHolder;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.view.Ui.adapter.CardViewHolder;
 
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 

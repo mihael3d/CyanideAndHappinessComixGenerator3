@@ -198,7 +198,7 @@
             android:background="@drawable/cardborder"
 
             app:cardCornerRadius="5dp"
-            app:cardElevation="10dp"
+            app:cardElevation="11dp"
             app:layout_constraintDimensionRatio="604:875"
 
             app:layout_fixedRotation="true">
@@ -255,15 +255,14 @@
             android:clickable="false"/>
 
 
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1000dp"
             android:layout_gravity="bottom"
             android:layout_marginBottom="-1050dp"
             android:background="@color/colorPrimary"
-            app:layout_bodyType="statik"
-            android:clickable="false"/>
+            android:clickable="false"
+            app:layout_bodyType="statik" />
         <View
             android:layout_width="match_parent"
             android:layout_height="1000dp"

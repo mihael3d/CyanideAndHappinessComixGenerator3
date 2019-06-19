@@ -37,22 +37,22 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelinehor1">
-
+        <ImageView
+            android:id="@+id/image_view_card_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ch_card_final_469"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="8dp" />
         <RelativeLayout
             android:id="@+id/card_1_border_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/image_view_card_1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp"
-                android:visibility="visible"
-                app:srcCompat="@drawable/a001_2"
-                tools:layout_editor_absoluteX="6dp"
-                tools:layout_editor_absoluteY="8dp" />
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
@@ -84,11 +84,6 @@
         app:layout_constraintStart_toEndOf="@+id/cv1"
         app:layout_constraintTop_toTopOf="@+id/cv1">
 
-        <RelativeLayout
-            android:id="@+id/card_2_border_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
             <ImageView
                 android:id="@+id/image_view_card_2"
                 android:layout_width="match_parent"
@@ -98,6 +93,11 @@
                 app:srcCompat="@drawable/a100"
                 tools:layout_editor_absoluteX="6dp"
                 tools:layout_editor_absoluteY="8dp" />
+
+        <RelativeLayout
+        android:id="@+id/card_2_border_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
@@ -129,10 +129,7 @@
         app:layout_constraintStart_toEndOf="@+id/cv2"
         app:layout_constraintTop_toTopOf="@+id/cv2">
 
-        <RelativeLayout
-            android:id="@+id/card_3_border_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+
 
             <ImageView
                 android:id="@+id/image_view_card_3"
@@ -144,7 +141,12 @@
                 app:srcCompat="@drawable/a100"
                 tools:layout_editor_absoluteX="6dp"
                 tools:layout_editor_absoluteY="8dp" />
+        <RelativeLayout
+        android:id="@+id/card_3_border_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         </RelativeLayout>
+
     </android.support.v7.widget.CardView>
 
 

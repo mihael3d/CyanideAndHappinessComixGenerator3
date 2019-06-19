@@ -1,7 +1,6 @@
 package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.data;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.GlobalApplication;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
@@ -9,12 +8,11 @@ import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-import javax.xml.datatype.DatatypeConstants;
-
 public final class Cards {
 
     private static volatile Cards instance;
-    private static volatile  ArrayList<Integer> cardsList;
+    private static volatile  ArrayList<Integer> cardsSimpleList;
+    private static volatile  ArrayList<Integer> cardsFinaleList;
 
     public static Cards getInstance() {
         Cards localInstance = instance;
@@ -23,28 +21,32 @@ public final class Cards {
                 localInstance = instance;
                 if (localInstance == null) {
                     instance = localInstance = new Cards();
-                    cardsList = instance.getFields();
+                    cardsSimpleList = instance.getFields("ch_card_");
+                    cardsFinaleList = instance.getFields("ch_card_final");
+
                 }
             }
         }
         return localInstance;
     }
 
-    public static ArrayList<Integer> getCardsList() {
-        return cardsList;
+    public static ArrayList<Integer> getCardsSimpleList() {
+        return cardsSimpleList;
     }
 
+    public static ArrayList<Integer> getCardsFinaleList() {
+        return cardsFinaleList;
+    }
 
-    private  ArrayList<Integer> getFields(){
-        //first we create an array list to hold all the resources ids
+    private  ArrayList<Integer> getFields(String cardsName){
+
         ArrayList<Integer> imageListId = new ArrayList<Integer>();
         Context context = GlobalApplication.getAppContext();
 
-//we iterate through all the items in the drawable folder
         Field[] drawables = R.drawable.class.getFields();
         for (Field f : drawables) {
             //if the drawable name contains "ic_card_" in the filename...
-            if (f.getName().contains("card"))
+            if (f.getName().contains(cardsName))
                 imageListId.add( context.getResources().getIdentifier(f.getName(), "drawable", context.getPackageName()));
         }
         return imageListId;

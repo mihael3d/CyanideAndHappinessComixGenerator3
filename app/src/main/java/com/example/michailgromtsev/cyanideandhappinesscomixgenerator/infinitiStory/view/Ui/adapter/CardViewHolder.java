@@ -1,4 +1,4 @@
-package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.adapter;
+package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.view.Ui.adapter;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
-import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.helper.ItemTouchHelperViewHolder;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.view.Ui.helper.ItemTouchHelperViewHolder;
 
 public class CardViewHolder extends RecyclerView.ViewHolder implements ItemTouchHelperViewHolder {
 
