@@ -31,7 +31,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
     private CardView cardView1;
     private CardView cardView2;
-    private CardView cardView3;
+//    private CardView cardView3;
     private CardView cardView4;
     private CardView cardView5;
     private CardView cardView6;
@@ -39,7 +39,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
     private ImageView card1ImageView;
     private ImageView card2ImageView;
-    private ImageView card3ImageView;
+  //  private ImageView card3ImageView;
     private ImageView card4ImageView;
     private ImageView card5ImageView;
     private ImageView card6ImageView;
@@ -50,7 +50,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
     FrameLayout.LayoutParams paramsCard1;
     FrameLayout.LayoutParams paramsCard2;
-    FrameLayout.LayoutParams paramsCard3;
+//    FrameLayout.LayoutParams paramsCard3;
     FrameLayout.LayoutParams paramsCard4;
     FrameLayout.LayoutParams paramsCard5;
     FrameLayout.LayoutParams paramsCard6;
@@ -60,8 +60,8 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
     float card1Y;
     float card2X;
     float card2Y;
-    float card3X;
-    float card3Y;
+//    float card3X;
+//    float card3Y;
     float card4X;
     float card4Y;
     float card5X;
@@ -72,7 +72,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
     float card7Y;
     float card1TransitionX;
     float card2TransitionX;
-    float card3TransitionX;
+//    float card3TransitionX;
     float card4TransitionX;
     float card5TransitionX;
     float card6TransitionX;
@@ -80,7 +80,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
     float card1TransitionY;
     float card2TransitionY;
-    float card3TransitionY;
+//    float card3TransitionY;
     float card4TransitionY;
     float card5TransitionY;
     float card6TransitionY;
@@ -122,7 +122,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
     physicsLayout = view.findViewById(R.id.physics_layout);
     cardView1 = view.findViewById(R.id.cv1);
     cardView2 = view.findViewById(R.id.cv2);
-    cardView3 = view.findViewById(R.id.cv3);
+//    cardView3 = view.findViewById(R.id.cv3);
     cardView4 = view.findViewById(R.id.cv4);
     cardView5 = view.findViewById(R.id.cv5);
     cardView6 = view.findViewById(R.id.cv6);
@@ -130,7 +130,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
     card1ImageView = view.findViewById(R.id.card1_image_view);
     card2ImageView = view.findViewById(R.id.card2_image_view);
-    card3ImageView = view.findViewById(R.id.item_card_image_view);
+   // card3ImageView = view.findViewById(R.id.item_card_image_view);
     card4ImageView = view.findViewById(R.id.card4_image_view);
     card5ImageView = view.findViewById(R.id.card5_image_view);
     card6ImageView = view.findViewById(R.id.card6_image_view);
@@ -143,7 +143,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
         paramsCard1 =  (FrameLayout.LayoutParams)cardView1.getLayoutParams();
         paramsCard2 =  (FrameLayout.LayoutParams)cardView2.getLayoutParams();
-        paramsCard3 = (FrameLayout.LayoutParams) cardView3.getLayoutParams();
+//        paramsCard3 = (FrameLayout.LayoutParams) cardView3.getLayoutParams();
         paramsCard4 = (FrameLayout.LayoutParams) cardView4.getLayoutParams();
         paramsCard5 = (FrameLayout.LayoutParams) cardView5.getLayoutParams();
         paramsCard6 = (FrameLayout.LayoutParams) cardView6.getLayoutParams();
@@ -152,9 +152,9 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
         card1X = cardView1.getX();
         card1Y = cardView1.getY();
         card2X = cardView2.getX();
-        card3Y = cardView2.getY();
-        card3X = cardView3.getX();
-        card3Y = cardView3.getY();
+        card2Y = cardView2.getY();
+//        card3X = cardView3.getX();
+//        card3Y = cardView3.getY();
         card4X = cardView4.getX();
         card4Y = cardView4.getY();
         card5X = cardView5.getX();
@@ -166,7 +166,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
         card1TransitionX = cardView1.getTranslationX();
         card2TransitionX = cardView2.getTranslationX();
-        card3TransitionX = cardView3.getTranslationX();
+//        card3TransitionX = cardView3.getTranslationX();
         card4TransitionX = cardView4.getTranslationX();
         card5TransitionX = cardView5.getTranslationX();
         card6TransitionX = cardView6.getTranslationX();
@@ -174,7 +174,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
         card1TransitionY = cardView1.getTranslationY();
         card2TransitionY = cardView2.getTranslationY();
-        card3TransitionY = cardView3.getTranslationY();
+//        card3TransitionY = cardView3.getTranslationY();
         card4TransitionY = cardView4.getTranslationY();
         card5TransitionY = cardView5.getTranslationY();
         card6TransitionY = cardView6.getTranslationY();
@@ -185,7 +185,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
         cardView1.setLayoutParams(paramsCard1);
         cardView2.setLayoutParams(paramsCard2);
-        cardView3.setLayoutParams(paramsCard3);
+//        cardView3.setLayoutParams(paramsCard3);
         cardView4.setLayoutParams(paramsCard4);
         cardView5.setLayoutParams(paramsCard5);
         cardView6.setLayoutParams(paramsCard6);
@@ -195,8 +195,8 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
         cardView1.setY(card1Y);
         cardView2.setX(card2X);
         cardView2.setY(card2Y);
-        cardView3.setX(card3X);
-        cardView3.setY(card3Y);
+//        cardView3.setX(card3X);
+//        cardView3.setY(card3Y);
         cardView4.setX(card4X);
         cardView4.setY(card4Y);
         cardView5.setX(card5X);
@@ -208,7 +208,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
         cardView1.setTranslationX(card1TransitionX);
         cardView2.setTranslationX(card2TransitionX);
-        cardView3.setTranslationX(card3TransitionX);
+//        cardView3.setTranslationX(card3TransitionX);
         cardView4.setTranslationX(card4TransitionX);
         cardView5.setTranslationX(card5TransitionX);
         cardView6.setTranslationX(card6TransitionX);
@@ -216,7 +216,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
         cardView1.setTranslationY(card1TransitionY);
         cardView2.setTranslationY(card2TransitionY);
-        cardView3.setTranslationY(card3TransitionY);
+//        cardView3.setTranslationY(card3TransitionY);
         cardView4.setTranslationY(card4TransitionY);
         cardView5.setTranslationY(card5TransitionY);
         cardView6.setTranslationY(card6TransitionY);
@@ -236,7 +236,7 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
 
     @Override
     public void setCard3Image(int imaje) {
-        card3ImageView.setImageResource(imaje);
+       // card3ImageView.setImageResource(imaje);
     }
 
     @Override

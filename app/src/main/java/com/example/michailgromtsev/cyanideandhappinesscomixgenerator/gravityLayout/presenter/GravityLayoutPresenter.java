@@ -17,7 +17,7 @@ public class GravityLayoutPresenter extends MvpPresenter<GravityLayoutView> {
         gravityLayoutModel = new GravityLayoutModel();
         getViewState().setCard1Image(gravityLayoutModel.getCard1Image());
         getViewState().setCard2Image(gravityLayoutModel.getCard2Image());
-        getViewState().setCard3Image(gravityLayoutModel.getCard3Image());
+       // getViewState().setCard3Image(gravityLayoutModel.getCard3Image());
         getViewState().setCard4Image(gravityLayoutModel.getCard4Image());
         getViewState().setCard5Image(gravityLayoutModel.getCard5Image());
         getViewState().setCard6Image(gravityLayoutModel.getCard6Image());
@@ -27,7 +27,7 @@ public class GravityLayoutPresenter extends MvpPresenter<GravityLayoutView> {
     public void onRefreshFloatingButtonPressed() {
         getViewState().setCard1Image(gravityLayoutModel.getCard1Image());
         getViewState().setCard2Image(gravityLayoutModel.getCard2Image());
-    getViewState().setCard3Image(gravityLayoutModel.getCard3Image());
+   // getViewState().setCard3Image(gravityLayoutModel.getCard3Image());
     getViewState().setCard4Image(gravityLayoutModel.getCard4Image());
     getViewState().setCard5Image(gravityLayoutModel.getCard5Image());
     getViewState().setCard6Image(gravityLayoutModel.getCard6Image());
