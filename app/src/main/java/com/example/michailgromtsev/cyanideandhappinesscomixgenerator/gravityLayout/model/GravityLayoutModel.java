@@ -13,7 +13,7 @@ public class GravityLayoutModel {
 
     private ArrayList<Integer> cardsOnTheTable;
     private ArrayList<Integer> alreadyShownСards;
-    private final int cardsOnTheTableCount = 6;
+    private final int cardsOnTheTableCount = 5;
 
     public GravityLayoutModel(){
         cardsOnTheTable =  new ArrayList();
@@ -45,9 +45,9 @@ public class GravityLayoutModel {
         return getRandomImage(4);
     }
 
-    public int getCard7Image(){
-        return getRandomImage(5);
-    }
+//    public int getCard7Image(){
+//        return getRandomImage(5);
+//    }
 
     private int getRandomImage(int cardIndex){
         Random rand = new Random();
