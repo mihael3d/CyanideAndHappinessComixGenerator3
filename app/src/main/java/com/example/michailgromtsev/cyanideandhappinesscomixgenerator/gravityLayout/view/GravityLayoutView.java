@@ -3,29 +3,42 @@ package com.example.michailgromtsev.cyanideandhappinesscomixgenerator.gravityLay
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
-
+@StateStrategyType(AddToEndSingleStrategy.class)
 public interface GravityLayoutView  extends MvpView {
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void setCard1Image(int imaje);
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void setCard2Image(int imaje);
+    void setCard1Image(int image);
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void setCard3Image(int imaje);
+    void setCard2Image(int image);
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void setCard4Image(int imaje);
+    void setCard3Image(int image);
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void setCard5Image(int imaje);
+    void setCard4Image(int image);
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void setCard6Image(int imaje);
+    void setCard5Image(int image);
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void setCard7Image(int imaje);
+    void setCardsToPositions(float[] cardsCoordinats);
+
+    void showCard1BorderLocked(boolean locked);
+
+    void showCard2BorderLocked(boolean locked);
+
+    void showCard3BorderLocked(boolean locked);
+
+    void showCard4BorderLocked(boolean locked);
+
+    void showCard5BorderLocked(boolean locked);
+
+
+    void setCard1Jump(boolean needJump);
+
+    void setCard2Jump(boolean needJump);
+
+    void setCard3Jump(boolean needJump);
+
+    void setCard4Jump(boolean needJump);
+
+    void setCard5Jump(boolean needJump);
 
 
 }

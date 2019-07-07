@@ -10,9 +10,9 @@ import java.util.List;
 public interface InfinitiStoryView extends MvpView {
 
     void setCardsListForRecycleView(List<Integer> cards);
-    @StateStrategyType(AddToEndSingleStrategy.class)
+
     void showRefreshFloatingActionButton();
-    @StateStrategyType(AddToEndSingleStrategy.class)
+
     void hideRefreshFloatingActionButton();
 
 }

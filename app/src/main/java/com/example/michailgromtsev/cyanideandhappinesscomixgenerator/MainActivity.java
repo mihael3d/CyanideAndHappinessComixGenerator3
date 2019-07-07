@@ -44,30 +44,20 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
             if (bottomNavigationView.getSelectedItemId() != item.getItemId()) {
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                            hideFragment(TAG_FRAGMENT_TWO);
-                            hideFragment(TAG_FRAGMENT_THREE);
-                        if(getSupportFragmentManager().findFragmentByTag(TAG_FRAGMENT_ONE)==null){
-                            addFragment(ComicGeneratorFragment.newInstance(),TAG_FRAGMENT_ONE);
-                        }
-                        showFragment(TAG_FRAGMENT_ONE);
-                                return true;
+                        ft.replace(R.id.fl_content,ComicGeneratorFragment.newInstance(),TAG_FRAGMENT_ONE);
+                        ft.commit();
+                        return true;
                     case R.id.navigation_dashboard:
-                            hideFragment(TAG_FRAGMENT_ONE);
-                            hideFragment(TAG_FRAGMENT_THREE);
-                        if(getSupportFragmentManager().findFragmentByTag(TAG_FRAGMENT_TWO)==null){
-                            addFragment(GravityLayoutFragment.newInstance(),TAG_FRAGMENT_TWO);
-                        }
-                        showFragment(TAG_FRAGMENT_TWO);
+                        ft.replace(R.id.fl_content,GravityLayoutFragment.newInstance(),TAG_FRAGMENT_TWO);
+                        ft.commit();
+
                         return true;
                     case R.id.navigation_notifications:
-                            hideFragment(TAG_FRAGMENT_ONE);
-                            hideFragment(TAG_FRAGMENT_TWO);
-                        if(getSupportFragmentManager().findFragmentByTag(TAG_FRAGMENT_THREE)==null){
-                            addFragment(InfinitiStoryFragment.newInstance(),TAG_FRAGMENT_THREE);
-                        }
-                        showFragment(TAG_FRAGMENT_THREE);
+                        ft.replace(R.id.fl_content,InfinitiStoryFragment.newInstance(),TAG_FRAGMENT_THREE);
+                        ft.commit();
                         return true;
                 }
             }
@@ -85,22 +75,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    private void hideFragment(@NonNull String tag){
-        if (getSupportFragmentManager().findFragmentByTag(tag)!=null){
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.hide(getSupportFragmentManager().findFragmentByTag(tag));
-            ft.commit();
-        }
-    }
-
-    private void showFragment(@NonNull String tag){
-        if (getSupportFragmentManager().findFragmentByTag(tag)!=null){
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.show(getSupportFragmentManager().findFragmentByTag(tag));
-            ft.commit();
-        }
-    }
 
 
 }

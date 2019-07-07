@@ -22,7 +22,7 @@ public final class Cards {
                 if (localInstance == null) {
                     instance = localInstance = new Cards();
                     cardsSimpleList = instance.getFields("ch_card_");
-                    cardsFinaleList = instance.getFields("ch_card_final");
+                    //cardsFinaleList = instance.getFields("ch_card_final");
 
                 }
             }

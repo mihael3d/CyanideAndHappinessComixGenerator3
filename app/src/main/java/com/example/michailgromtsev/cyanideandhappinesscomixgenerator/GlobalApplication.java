@@ -3,10 +3,14 @@ package com.example.michailgromtsev.cyanideandhappinesscomixgenerator;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.model.CommixGeneratorModel;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.data.Cards;
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.gravityLayout.model.GravityLayoutModel;
 
 public class GlobalApplication extends Application {
 private Cards cards;
+private GravityLayoutModel gravityLayoutModel;
+private CommixGeneratorModel comixGeneratorModel;
     private static Context appContext;
 
     @Override
@@ -15,6 +19,9 @@ private Cards cards;
 
         appContext = getApplicationContext();
         cards = Cards.getInstance();
+        gravityLayoutModel = GravityLayoutModel.getInstance();
+        comixGeneratorModel = CommixGeneratorModel.getInstance();
+
     }
 
     public static Context getAppContext() {

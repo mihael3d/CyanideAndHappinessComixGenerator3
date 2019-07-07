@@ -21,8 +21,6 @@ import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenerator.presenter.ComicsGeneratorPresenter;
 
-import info.hoang8f.widget.FButton;
-
 public class ComicGeneratorFragment extends MvpAppCompatFragment implements ComicGeneratorView {
 
     private final int layout = R.layout.fragment_comix_genertor; // fragment_home   exemple_layout  fragment_comix_genertor
@@ -111,18 +109,48 @@ private void setupUx(){
 
     // UI Lock
     @Override
-    public void setLoc1kLocked(boolean locked) {
-        setStateForImageOfLock(imageLock1,locked);
+    public void setLoc1LockedByAnimation(boolean locked) {
+        if (!comicsGeneratorPresenter.isInRestoreState(this)){
+            setStateForImageOfLockWhitAnimation(imageLock1,locked);
+        }
     }
 
     @Override
-    public void setLock2Locked(boolean locked) {
-        setStateForImageOfLock(imageLock2,locked);
+    public void setLock2LockedByAnimation(boolean locked) {
+        if (!comicsGeneratorPresenter.isInRestoreState(this)) {
+            setStateForImageOfLockWhitAnimation(imageLock2, locked);
+        }
     }
 
     @Override
-    public void setLock3Locked(boolean locked) {
-        setStateForImageOfLock(imageLock3,locked);
+    public void setLock3LockedByAnimation(boolean locked) {
+        if (!comicsGeneratorPresenter.isInRestoreState(this)) {
+            setStateForImageOfLockWhitAnimation(imageLock3, locked);
+        }
+    }
+
+    @Override
+    public void setLock1LockedWithNoAnimation(boolean locked) {
+        setStateForImageOfLockByStatickImage(imageLock1 , locked);
+        if (!comicsGeneratorPresenter.isInRestoreState(this)){
+
+        }
+    }
+
+    @Override
+    public void setLock2LockedWithNoAnimation(boolean locked) {
+        setStateForImageOfLockByStatickImage(imageLock2 , locked);
+        if (!comicsGeneratorPresenter.isInRestoreState(this)){
+
+        }
+    }
+
+    @Override
+    public void setLock3LockedWithNoAnimation(boolean locked) {
+        setStateForImageOfLockByStatickImage(imageLock3 , locked);
+        if (!comicsGeneratorPresenter.isInRestoreState(this)){
+
+        }
     }
 
     // UI CardBorder
@@ -219,7 +247,7 @@ private void setupUx(){
         relativeLayout.setBackgroundResource(cardBorder);
     }
 
-    private void setStateForImageOfLock(@NonNull ImageView lockImajeView, @NonNull boolean locked){
+    private void setStateForImageOfLockWhitAnimation(@NonNull ImageView lockImajeView, @NonNull boolean locked){
         int lockAnimDrawable;
         if (locked) {
             lockAnimDrawable = R.drawable.lock_whith_angle_lock_300;
@@ -231,7 +259,15 @@ private void setupUx(){
         ((Animatable) imageLockDrawable).start();
     }
 
-
+    private void setStateForImageOfLockByStatickImage(@NonNull ImageView lockImajeView, @NonNull boolean locked){
+        int lockAnimDrawable;
+        if (locked) {
+            lockAnimDrawable = R.drawable.lock_whith_angle_un_lock_300;
+        } else {
+            lockAnimDrawable = R.drawable.lock_whith_angle_lock_300;
+        }
+        lockImajeView.setImageResource(lockAnimDrawable);
+    }
 
 
 }
