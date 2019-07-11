@@ -15,15 +15,17 @@ public class InfinitiStoryPresenter extends MvpPresenter<InfinitiStoryView> {
 
     @Override
     protected void onFirstViewAttach() {
-        infinitiStoryModel = new InfinitiStoryModel();
+        infinitiStoryModel = InfinitiStoryModel.getInstance();
         super.onFirstViewAttach();
-        getViewState().setCardsListForRecycleView(infinitiStoryModel.getNewRandomCardsForRecycleView(250));
+
+        getViewState().setCardsListForRecycleView(infinitiStoryModel.getCardsForRecycleView());
     }
 
     @Override
     public void attachView(InfinitiStoryView view) {
         super.attachView(view);
-        getViewState().setCardsListForRecycleView(infinitiStoryModel.getCardsOnRecycleView());
+//        getViewState().setCardsListForRecycleView(infinitiStoryModel.getCardsForRecycleView());
+        getViewState().scrollRecyclerViewToPosition(infinitiStoryModel.getFirstVisibleItemRecycleViewPosition());
     }
 
     public void onCardMoveUpOrLeft(int i){
@@ -33,9 +35,9 @@ public class InfinitiStoryPresenter extends MvpPresenter<InfinitiStoryView> {
     public void onCardMoveDownOrRight(int i){
         infinitiStoryModel.onCardMoveDownOrRight(i);
     }
-     public void onCardDismiss(int position) {
-         infinitiStoryModel.onCardDismiss(position);
-     }
+    public void onCardDismiss(int position) {
+        infinitiStoryModel.onCardDismiss(position);
+    }
 
      public void onRecyclerViewScroll(int currentOrientation, int dx, int dy ){
          if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -56,6 +58,13 @@ public class InfinitiStoryPresenter extends MvpPresenter<InfinitiStoryView> {
      }
 
      public void onRefreshFloatingButtonPressed(){
-         getViewState().setCardsListForRecycleView(infinitiStoryModel.getNewRandomCardsForRecycleView(5));
+        infinitiStoryModel.generateRandomCardsForRecycleView(250);
+         getViewState().setCardsListForRecycleView(infinitiStoryModel.getCardsForRecycleView());
+         infinitiStoryModel.setFirstVisibleItemRecycleViewPosition(0);
+         getViewState().scrollRecyclerViewToPosition(infinitiStoryModel.getFirstVisibleItemRecycleViewPosition());
+     }
+
+     public void onInfinitiStoryFragmentPoused(int firstVisibleItemRecycleViewPosition){
+        infinitiStoryModel.setFirstVisibleItemRecycleViewPosition(firstVisibleItemRecycleViewPosition);
      }
 }

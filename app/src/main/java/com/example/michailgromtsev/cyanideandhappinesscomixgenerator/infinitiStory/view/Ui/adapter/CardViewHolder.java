@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
+import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.GlobalApplication;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.R;
 import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.infinitiStory.view.Ui.helper.ItemTouchHelperViewHolder;
 
@@ -20,6 +22,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder implements ItemTouch
     private CardView cardView;
     private ColorStateList cardColor;
     private ImageView imageView;
+    private RelativeLayout relativeLayout;
 
 
     public static CardViewHolder create( @NonNull ViewGroup parent){
@@ -42,7 +45,8 @@ public class CardViewHolder extends RecyclerView.ViewHolder implements ItemTouch
      */
     @Override
     public void onItemSelected() {
-       cardView.setCardBackgroundColor(Color.LTGRAY);
+       cardView.setCardBackgroundColor(GlobalApplication.getAppContext().getResources().getColor(R.color.primary_light));
+        relativeLayout.setBackgroundResource( R.drawable.cardborderlock);
     }
 
     /**
@@ -52,6 +56,7 @@ public class CardViewHolder extends RecyclerView.ViewHolder implements ItemTouch
     @Override
     public void onItemClear() {
         cardView.setCardBackgroundColor(cardColor);
+        relativeLayout.setBackgroundResource(0);
     }
 
     public ImageView getImageView() {
@@ -66,5 +71,6 @@ public class CardViewHolder extends RecyclerView.ViewHolder implements ItemTouch
         cardView = itemView.findViewById(R.id.cv1);
         imageView = itemView.findViewById(R.id.item_card_image_view);
         cardColor = cardView.getCardBackgroundColor();
+        relativeLayout = itemView.findViewById(R.id.card_1_border_layout);
     }
 }

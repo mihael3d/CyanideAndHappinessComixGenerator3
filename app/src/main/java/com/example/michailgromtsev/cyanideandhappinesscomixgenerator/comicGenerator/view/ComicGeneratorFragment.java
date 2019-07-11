@@ -10,7 +10,7 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.arellomobile.mvp.MvpAppCompatFragment;
@@ -30,7 +30,7 @@ public class ComicGeneratorFragment extends MvpAppCompatFragment implements Comi
     private ImageView imageViewCard1;
     private ImageView imageViewCard2;
     private ImageView imageViewCard3;
-    private Button buttonGenerateComix;
+    private ImageButton buttonGenerateComix;
 
     private RelativeLayout card1BorderLayout;
     private RelativeLayout card2BorderLayout;
@@ -63,7 +63,7 @@ private void setupUi (View view){
     imageViewCard1 = view.findViewById(R.id.image_view_card_1);
     imageViewCard2 = view.findViewById(R.id.image_view_card_2);
     imageViewCard3 = view.findViewById(R.id.image_view_card_3);
-    buttonGenerateComix = view.findViewById(R.id.button_generate_comix);
+    buttonGenerateComix = view.findViewById(R.id.button_generate_commix);
 
     cardView1 = view.findViewById(R.id.cv1 );
     cardView2 = view.findViewById(R.id.cv2 );
@@ -96,6 +96,11 @@ private void setupUx(){
     buttonGenerateComix.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
+            Drawable imageLockDrawable = buttonGenerateComix.getDrawable();
+            ((Animatable) imageLockDrawable).stop();
+            ((Animatable) imageLockDrawable).start();
+
             comicsGeneratorPresenter.onButtonGeneratePressed();
         }
     });

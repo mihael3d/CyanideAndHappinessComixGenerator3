@@ -15,4 +15,6 @@ public interface InfinitiStoryView extends MvpView {
 
     void hideRefreshFloatingActionButton();
 
+    void scrollRecyclerViewToPosition (int position);
+
 }

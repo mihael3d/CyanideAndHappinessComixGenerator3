@@ -15,7 +15,7 @@ import com.example.michailgromtsev.cyanideandhappinesscomixgenerator.comicGenera
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG_FRAGMENT_ONE = "fragment_one";
+    private static final String TAG_FRAGMENT_ONE = "fragment_commix_generator";
     private static final String TAG_FRAGMENT_TWO = "fragment_gravity";
     private static final String TAG_FRAGMENT_THREE = "fragment_infiniti_story";
 

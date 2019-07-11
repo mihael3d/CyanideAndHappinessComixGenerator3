@@ -150,21 +150,22 @@
     </android.support.v7.widget.CardView>
 
 
-
-    <Button
-        android:id="@+id/button_generate_comix"
+    <ImageButton
+        android:id="@+id/button_generate_commix"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:elevation="-10dp"
-        android:text="Genearate new comix"
-
-    android:theme="@style/MyButton"
         android:background="@drawable/btn_rounded"
+        android:elevation="3dp"
+        android:padding="6dp"
+
+
+        android:theme="@style/MyButton"
         app:layout_constraintBottom_toTopOf="@+id/guidelinehor3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelinehor3"
-        app:layout_constraintWidth_percent="0.65" />
+        app:layout_constraintWidth_percent="0.65"
+        app:srcCompat="@drawable/round_arrows_bouce_white_big" />
 
 
 

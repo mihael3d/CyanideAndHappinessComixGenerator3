@@ -35,11 +35,11 @@ public class GravityLayoutPresenter extends MvpPresenter<GravityLayoutView> {
         super.attachView(view);
         if (orientation == ORIENTATION_PORTRAIT){
             if (gravityLayoutModel.getCardsPortraitOrientation() != null){
-                getViewState().setCardsToPositions(gravityLayoutModel.getCardsPortraitOrientation());
+                getViewState().setCardsToPositions(gravityLayoutModel.getCardsPortraitOrientation(), orientation);
             }
         } else {
             if (gravityLayoutModel.getCardsLandscapeOrientation() != null){
-                getViewState().setCardsToPositions(gravityLayoutModel.getCardsLandscapeOrientation());
+                getViewState().setCardsToPositions(gravityLayoutModel.getCardsLandscapeOrientation(), orientation);
             }
         }
 
@@ -116,7 +116,7 @@ public class GravityLayoutPresenter extends MvpPresenter<GravityLayoutView> {
                          float card2ViewX,float card2ViewY,
                          float card3ViewX,float card3ViewY,
                          float card4ViewX,float card4ViewY,
-                         float card5ViewX,float card5ViewY){
+                         float card5ViewX,float card5ViewY ){
          float[] cardViewCoordinats = new  float[]{ card1ViewX, card1ViewY, card2ViewX, card2ViewY,
                  card3ViewX, card3ViewY,card4ViewX, card4ViewY, card5ViewX, card5ViewY,};
 
@@ -125,7 +125,6 @@ public class GravityLayoutPresenter extends MvpPresenter<GravityLayoutView> {
          } else {
              gravityLayoutModel.setCardsLandscapeOrientation(cardViewCoordinats);
          }
-
     }
 
     public void onCardPres (int cardNumber, long timeInSec)  {

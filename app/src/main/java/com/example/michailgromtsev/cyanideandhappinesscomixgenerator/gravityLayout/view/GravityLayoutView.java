@@ -17,7 +17,7 @@ public interface GravityLayoutView  extends MvpView {
 
     void setCard5Image(int image);
 
-    void setCardsToPositions(float[] cardsCoordinats);
+    void setCardsToPositions(float[] cardsCoordinats, int orientatation);
 
     void showCard1BorderLocked(boolean locked);
 

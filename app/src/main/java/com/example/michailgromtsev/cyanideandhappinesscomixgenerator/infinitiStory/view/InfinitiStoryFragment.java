@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
@@ -82,6 +83,34 @@ public class InfinitiStoryFragment extends MvpAppCompatFragment implements OnSta
         refreshFloatingActionButton.hide();
     }
 
+    @Override
+    public void scrollRecyclerViewToPosition(int position) {
+        if (recyclerView != null) {
+            recyclerView.scrollToPosition(position);
+//            if (infinitiStoryPresenter.isInRestoreState(this)){
+//                recyclerView.scrollToPosition(position);
+//            } else {
+////                recyclerView.scrollToPosition(position +10);
+//                RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(getActivity()){
+//                    @Override protected int getVerticalSnapPreference() {
+//                        return LinearSmoothScroller.SNAP_TO_START;
+//                    }
+//                };
+//                smoothScroller.setTargetPosition(position);
+//                ((LinearLayoutManager) recyclerView.getLayoutManager()).startSmoothScroll(smoothScroller );
+//            }
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        int position = 0;
+        if (recyclerView.getLayoutManager() != null) {
+            position = ((LinearLayoutManager)recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
+        }
+        infinitiStoryPresenter.onInfinitiStoryFragmentPoused(position);
+    }
 
     private void initUi(View view) {
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -145,11 +174,12 @@ public class InfinitiStoryFragment extends MvpAppCompatFragment implements OnSta
         });
 
         refreshFloatingActionButton.setOnClickListener(v -> {
-            infinitiStoryPresenter.onRefreshFloatingButtonPressed();
+
 
             Drawable imageLockDrawable = refreshFloatingActionButton.getDrawable();
             ((Animatable) imageLockDrawable).stop();
             ((Animatable) imageLockDrawable).start();
+            infinitiStoryPresenter.onRefreshFloatingButtonPressed();
         });
     }
 

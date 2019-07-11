@@ -86,6 +86,10 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
     @InjectPresenter(tag="gravityLayoutPresentr" )
     GravityLayoutPresenter gravityLayoutPresenter;
 
+    public static GravityLayoutFragment newInstance() {
+        return new GravityLayoutFragment();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -106,9 +110,6 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
                 card2X,card2Y,card3X,card3Y,card4X,card4Y,card5X,card5Y);
     }
 
-    public static GravityLayoutFragment newInstance() {
-        return new GravityLayoutFragment();
-    }
 
     private void initUi(View view) {
         physicsLayout = view.findViewById(R.id.physics_layout);
@@ -313,18 +314,20 @@ public class GravityLayoutFragment extends MvpAppCompatFragment implements Gravi
     }
 
     @Override
-    public void setCardsToPositions(float[] cardsCoordinats) {
-        card1X = cardsCoordinats[0];
-        card1Y = cardsCoordinats[1];
-        card2X = cardsCoordinats[2];
-        card2Y = cardsCoordinats[3];
-        card3X = cardsCoordinats[4];
-        card3Y = cardsCoordinats[5];
-        card4X = cardsCoordinats[6];
-        card4Y = cardsCoordinats[7];
-        card5X = cardsCoordinats[8];
-        card5Y = cardsCoordinats[9];
-        putCarsOnTheirPositions(false,false,false,false,false);
+    public void setCardsToPositions(float[] cardsCoordinats, int orientation) {
+        if (this.orientation == orientation) {
+            card1X = cardsCoordinats[0];
+            card1Y = cardsCoordinats[1];
+            card2X = cardsCoordinats[2];
+            card2Y = cardsCoordinats[3];
+            card3X = cardsCoordinats[4];
+            card3Y = cardsCoordinats[5];
+            card4X = cardsCoordinats[6];
+            card4Y = cardsCoordinats[7];
+            card5X = cardsCoordinats[8];
+            card5Y = cardsCoordinats[9];
+            putCarsOnTheirPositions(false, false, false, false, false);
+        }
     }
 
     @Override
