@@ -39,7 +39,9 @@ public class ComicGeneratorFragment extends MvpAppCompatFragment implements Comi
     private  ImageView imageLock1;
     private  ImageView imageLock2;
     private  ImageView imageLock3;
-
+    private RelativeLayout relativeLayoutImageLock1;
+    private RelativeLayout relativeLayoutImageLock2;
+    private RelativeLayout relativeLayoutImageLock3;
     private  Handler handler;
 
     //public ComicGeneratorFragment() {}
@@ -72,20 +74,20 @@ private void setupUi (View view){
     card1BorderLayout = view.findViewById(R.id.card_1_border_layout);
     card2BorderLayout = view.findViewById(R.id.card_2_border_layout);
     card3BorderLayout = view.findViewById(R.id.card_3_border_layout);
-    imageLock1 = view.findViewById(R.id.image_lock);
+    imageLock1 = view.findViewById(R.id.image_lock_1);
     imageLock2 = view.findViewById(R.id.image_lock_2);
     imageLock3 = view.findViewById(R.id.image_lock_3);
-
-
-
+    relativeLayoutImageLock1 = view.findViewById(R.id.relative_layout_image_lock_1);
+    relativeLayoutImageLock2 = view.findViewById(R.id.relative_layout_image_lock_2);
+    relativeLayoutImageLock3 = view.findViewById(R.id.relative_layout_image_lock_3);
 }
 
 private void setupUx(){
      handler = new Handler();
     // Change lock images on click
-    imageLock1.setOnClickListener(v -> comicsGeneratorPresenter.onLock1Press());
-    imageLock2.setOnClickListener(v -> comicsGeneratorPresenter.onLock2Press());
-    imageLock3.setOnClickListener(v -> comicsGeneratorPresenter.onLock3Press());
+    relativeLayoutImageLock1.setOnClickListener(v -> comicsGeneratorPresenter.onLock1Press());
+    relativeLayoutImageLock2.setOnClickListener(v -> comicsGeneratorPresenter.onLock2Press());
+    relativeLayoutImageLock3.setOnClickListener(v -> comicsGeneratorPresenter.onLock3Press());
 
     // Change card's border color on click
     cardView1.setOnClickListener(v -> comicsGeneratorPresenter.onCard1pres());

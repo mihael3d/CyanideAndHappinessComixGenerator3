@@ -11,7 +11,6 @@
         android:id="@+id/cv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -22,12 +21,9 @@
         app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="604:875"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-
 
             <ImageView
                 android:id="@+id/item_card_image_view"
@@ -35,34 +31,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="visible"
-                app:srcCompat="@drawable/a001_2"
+                app:srcCompat="@drawable/ic_card_1"
                 android:contentDescription="TODO" />
-
         <RelativeLayout
         android:id="@+id/card_1_border_layout"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         >
         </RelativeLayout>
     </android.support.v7.widget.CardView>
-
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guidelinehor1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.0" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guidelinehor2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.20" />
-
-
 </android.support.constraint.ConstraintLayout>
 

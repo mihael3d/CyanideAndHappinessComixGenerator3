@@ -7,21 +7,31 @@
     xmlns:fbutton="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+   >
 
 
-    <ImageView
-        android:id="@+id/image_lock"
+    <RelativeLayout
+        android:id="@+id/relative_layout_image_lock_1"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:alpha=".5"
-        app:layout_constraintEnd_toStartOf="@+id/cv2"
-        app:layout_constraintHorizontal_bias="0.49"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/cv1"
         app:layout_constraintStart_toStartOf="@+id/cv1"
-        app:layout_constraintTop_toTopOf="@+id/guidelinehor1"
-        app:srcCompat="@drawable/lock_whith_angle_lock_500" />
+
+        app:layout_constraintTop_toTopOf="@+id/guidelinehor_lock">
+
+        <ImageView
+            android:id="@+id/image_lock_1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:alpha=".5"
+            app:srcCompat="@drawable/lock_whith_angle_lock_500" />
+    </RelativeLayout>
+
+
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv1"
@@ -44,7 +54,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="0dp"
             android:visibility="visible"
-            app:srcCompat="@drawable/ch_card_final_469"
+            app:srcCompat="@drawable/ic_card_1"
             tools:layout_editor_absoluteX="6dp"
             tools:layout_editor_absoluteY="8dp" />
         <RelativeLayout
@@ -56,17 +66,25 @@
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-    <ImageView
-        android:id="@+id/image_lock_2"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+    <RelativeLayout
+        android:id="@+id/relative_layout_image_lock_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
 
-        android:layout_marginTop="8dp"
-        android:alpha=".5"
         app:layout_constraintEnd_toEndOf="@+id/cv2"
         app:layout_constraintStart_toStartOf="@+id/cv2"
-        app:layout_constraintTop_toTopOf="@+id/guidelinehor1"
-        app:srcCompat="@drawable/lock_whith_angle_lock_500" />
+
+        app:layout_constraintTop_toTopOf="@+id/guidelinehor_lock">
+
+        <ImageView
+            android:id="@+id/image_lock_2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:alpha=".5"
+            app:srcCompat="@drawable/lock_whith_angle_lock_500" />
+    </RelativeLayout>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv2"
@@ -90,7 +108,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="0dp"
-                app:srcCompat="@drawable/a100"
+                app:srcCompat="@drawable/ic_card_2"
                 tools:layout_editor_absoluteX="6dp"
                 tools:layout_editor_absoluteY="8dp" />
 
@@ -101,18 +119,23 @@
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-    <ImageView
-        android:id="@+id/image_lock_3"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-
-        android:layout_marginTop="8dp"
-        android:alpha=".5"
+    <RelativeLayout
+        android:id="@+id/relative_layout_image_lock_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="@+id/cv3"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/cv3"
-        app:layout_constraintTop_toTopOf="@+id/guidelinehor1"
-        app:srcCompat="@drawable/lock_whith_angle_lock_500" />
+        app:layout_constraintTop_toTopOf="@+id/guidelinehor_lock">
+
+        <ImageView
+            android:id="@+id/image_lock_3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:alpha=".5"
+            app:srcCompat="@drawable/lock_whith_angle_lock_500" />
+    </RelativeLayout>
 
 
     <android.support.v7.widget.CardView
@@ -138,7 +161,7 @@
 
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="0dp"
-                app:srcCompat="@drawable/a100"
+                app:srcCompat="@drawable/ic_card_3"
                 tools:layout_editor_absoluteX="6dp"
                 tools:layout_editor_absoluteY="8dp" />
         <RelativeLayout
@@ -175,6 +198,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.20" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelinehor_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guidelinehor2"
